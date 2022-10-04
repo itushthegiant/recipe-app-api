@@ -82,5 +82,5 @@ class PrivateRecipeApiTests(TestCase):
 
         recipes = Recipe.objects.filter(user=self.usr)
         serializer = RecipeSerializer(recipes, many=True)
-        self.assertE(res.status_code, status.HTTP_200_OK)
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, serializer.data)
